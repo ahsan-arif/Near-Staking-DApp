@@ -10,3 +10,6 @@ Cargo.lock
 **/*.rs.bk
 
 /webapp/node_modules
+
+# Local Netlify folder
+.netlify

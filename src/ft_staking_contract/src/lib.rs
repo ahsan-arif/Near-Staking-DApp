@@ -110,6 +110,7 @@ enum StorageKeys {
 impl Contract {
     #[init]
     pub fn new(owner_id: AccountId, approved_ft_token_ids: Vec<FT>, ft_apy: Vec<APY>) -> Self {
+        assert!(!env::state_exists(), "Already initialized");
         let mut this = Self {
             owner_id: owner_id.into(),
             approved_ft_token_ids: UnorderedSet::new(StorageKeys::ApproveFungibleTokens),
